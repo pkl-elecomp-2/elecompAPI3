@@ -28,13 +28,4 @@ class Beranda extends RESTController {
 
         $this->response($data, 200);
     }
-
-    // GET /Beranda/promo
-    function promo_get(){
-        $data = array(
-            'data' => $this->db->get('tb_promo')->result()
-        );
-
-        $this->response($data, 200);
-    }
 }

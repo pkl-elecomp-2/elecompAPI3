@@ -40,6 +40,26 @@ class Client extends RestController {
 
         $this->response($data, 200);
     }
+    
+    // Update Profil
+    function profil_put(){
+        $id = $this->put('id');
+        $data = array(
+            'id' => $this->put('id'),
+            'title' => $this->put('title'),
+            'release_date' => $this->put('release_date'),
+            'poster' => $this->put('poster'),
+        );
+
+        $this->db->where('id', $id);
+        $update = $this->db->update('tb_member', $data);
+
+        if ($update) {
+            $this->response($data, 200);
+        } else {
+            $this->response(array('status' => 'fail', 502));
+        }
+    }
 
     // Ticket
     function ticket_get(){
