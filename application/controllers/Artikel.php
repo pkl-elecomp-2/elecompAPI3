@@ -79,12 +79,4 @@ class Artikel extends RESTController {
             $this->response(array('status' => 'Failed to Add'), 500);
         }
     }
-
-    // DEV ONLY
-    function dev_get(){
-        $fields = $this->db->field_data('tb_artikel');
-        foreach ($fields as $field) {
-            echo "<p>" . $field->name . " || " . $field->type . " || " . $field->max_length . "</p>";
-        }
-    }
 }

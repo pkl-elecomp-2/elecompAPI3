@@ -9,81 +9,30 @@
 
 ## List Table
 
-- acl_token
-- admin
-- mainmenu
-- setting_ukuran
-- submenu
+### Unused
+
 - t_absensi
-- t_status
-- tab_akses_mainmenu
-- tab_akses_submenu
-- tab_izin
-- tb_anggota
-- tb_artikel
-- tb_bagian
-- tb_detail_kelompok
-- tb_event
-- tb_fakultas
-- tb_galeri
-- tb_hari_kerja
-- tb_jadwal
-- tb_jenis_layanan
-- tb_jenis_partner
-- tb_jurusan
-- tb_kampus
-- tb_kategori_member
-- tb_keahlian_magang
-- tb_keahlian_mahasiswa
-- tb_kelompok
-- tb_komentar
-- tb_kontak
-- tb_layanan
-- tb_mahasiswa
-- tb_mahasiswa_kampus
-- tb_member
-- tb_partner
-- tb_prodi
 - tb_progress_magang
-- tb_promo
-- tb_siswa_smk
+- tb_event
+- tb_galeri
+
+### Beranda
+
 - tb_slider
-- tb_smk
-- tb_surat_keluar
-- tb_surat_masuk
-- tb_survey
-- tb_tanggapan
-- tb_team
+- tb_jenis_layanan
+- tb_promo
+
+### Profil
+
 - tb_tentang
-- tb_tugas_magang
-- tbl_akun
-- tbl_counter
-- tbl_data_hutang
-- tbl_data_pembayaran_hutang
-- tbl_data_penyetoran_piutang
-- tbl_data_piutang
-- tbl_jabatan
-- tbl_jurnal_umum
-- tbl_jurnal_umum_detail
-- tbl_karyawan
-- tbl_kontak
-- tbl_kontak_darurat
-- tbl_pemohon_pekerjaan
-- tbl_pendidikan
-- tbl_pengalaman_organisasi
-- tbl_penguasaan
-- tbl_penguasaan_komputer
-- tbl_produk
-- tbl_referensi_pekerjaan
-- tbl_riwayat_kesehatan
-- tbl_riwayat_pekerjaan
-- tbl_sop
+
+### Artikel
+
+- tb_artikel
+- tb_komentar
+
+### Client
+
+- tb_member
 - td_tiket
-- tm_mahasiswa
-- tm_pekerjaan
-- tm_pribadi
-- tm_riwayat_pendidikan
-- tm_tiket
-- tm_wilayah
-- tm_wilayah_copy
-- users
+- tb_survey
