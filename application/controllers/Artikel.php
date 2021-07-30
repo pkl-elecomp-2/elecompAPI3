@@ -22,13 +22,15 @@ class Artikel extends RESTController {
         // Get Artikel
         $data = array();
         if(!empty($id)){
+            $this->addView($id);
             $data = array(
                 'data' => $this->db->get_where('tb_artikel', array('id_artikel' => $id))->result()
             );
-            $this->addView($id);
         } else {
+            $this->db->order_by('tanggal_artikel', 'desc');
+            $result = $this->db->get('tb_artikel')->result();
             $data = array(
-                'data' => $this->db->get('tb_artikel')->result()
+                'data' => $result
             );
         }
         $this->response($data, 200);
@@ -49,12 +51,11 @@ class Artikel extends RESTController {
         $id = $this->get('id');
         $data = (!empty($id)) ?
             array(
-                'data' => $this->db->get_where('tb_komentar', array('id_artikel' => $id))->result()
+                'data' => $this->db->get_where('tb_komentar', array('id_artikel' => $id, ''))->result()
             ) :
             array(
                 'data' => $this->db->get('tb_komentar')->result()
             );
-
         $this->response($data, 200);
     }
 
