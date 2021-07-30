@@ -27,7 +27,7 @@ class Promo extends RestController {
     }
     private function activePromo() {
         $query = $this->db->query(
-            "SELECT * FROM tb_promo WHERE tanggal_mulai < CURDATE() AND tanggal_akhir > CURDATE();"
+            "SELECT * FROM tb_promo WHERE tanggal_mulai < CURDATE() AND tanggal_akhir >= CURDATE();"
         );
         return $query->result();
     }
