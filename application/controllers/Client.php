@@ -24,7 +24,7 @@ class Client extends RestController {
             if (count($result) > 0) {
                 $this->response(array('status' => 'success', 'message' => 'Login success', 'data' => $result), 200);
             } else {
-                $this->response(array('status' => 'failed', 'message' => 'Login failed'), 200);
+                $this->response(array('status' => 'failed', 'message' => 'Login failed: Wrong username or password'), 200);
             }
         } else {
             $this->response(array('status' => 'error', 'message' => 'Missing username or password'), 404);
