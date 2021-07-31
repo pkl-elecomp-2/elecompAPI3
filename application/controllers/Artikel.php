@@ -68,7 +68,7 @@ class Artikel extends RESTController {
             'nama_komentar' => $this->post('nama_komentar'),
             'email_komentar' => $this->post('email_komentar'),
             'no_tlp' => $this->post('no_tlp'),
-            'tanggal_komentar' => $this->post('tanggal_komentar'),
+            'tanggal_komentar' => date('Y-m-d H:i:s'),
             'deskripsi_komentar' => $this->post('deskripsi_komentar')
         );
 
