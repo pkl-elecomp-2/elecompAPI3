@@ -75,9 +75,9 @@ class Artikel extends RESTController {
         $insert = $this->db->insert('tb_komentar', $data);
 
         if ($insert) {
-            $this->response($data, 200);
+            $this->response(array('status' => 'Komentar berhasil', 'komentar' => $data), 200);
         } else {
-            $this->response(array('status' => 'Failed to Add'), 500);
+            $this->response(array('status' => 'Komentar gagal di kirim'), 500);
         }
     }
 }
