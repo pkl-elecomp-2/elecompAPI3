@@ -52,7 +52,7 @@ class Client extends RestController {
             'view_password' => $this->put('password')
         );
 
-        $this->db->where('id', $id);
+        $this->db->where('id_member', $id);
         $update = $this->db->update('tb_member', $data);
 
         if ($update) {
