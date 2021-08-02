@@ -22,6 +22,7 @@ class Artikel extends RESTController {
         // Get Artikel
         $data = array();
         if(!empty($id)){
+            // Add the counter
             $this->addView($id);
             $data = array(
                 'data' => $this->db->get_where('tb_artikel', array('id_artikel' => $id))->result()

@@ -11,21 +11,25 @@ class Beranda extends RESTController {
         $this->load->database();
     }
 
-    // GET /Beranda
+    /*
+    * GET /Beranda => Used for to get Banner Slider
+    */
     function index_get(){
-        $data = array(
-            'data' => $this->db->get('tb_slider')->result()
+        $this->response(
+            array(
+                'data' => $this->db->get('tb_slider')->result()
+            ), 200
         );
-
-        $this->response($data, 200);
     }
 
-    // GET /Beranda/layanan
+    /*
+    * GET /Beranda/layanan => Used for to get list of layanan
+    */
     function layanan_get(){
-        $data = array(
-            'data' => $this->db->get('tb_jenis_layanan')->result()
+        $this->response(
+            array(
+                'data' => $this->db->get('tb_jenis_layanan')->result()
+            ), 200
         );
-
-        $this->response($data, 200);
     }
 }
