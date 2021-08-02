@@ -45,7 +45,6 @@ class Client extends RestController {
     function profil_put(){
         $id = $this->put('id');
         $data = array(
-            'id' => $this->put('id'),
             'nama_member' => $this->put('nama_member'),
             'email' => $this->put('email'),
             'username' => $this->put('username'),
