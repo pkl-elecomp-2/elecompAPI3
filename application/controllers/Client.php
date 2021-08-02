@@ -48,7 +48,7 @@ class Client extends RestController {
             'nama_member' => $this->put('nama_member'),
             'email' => $this->put('email'),
             'username' => $this->put('username'),
-            'password' => $this->put('password'),
+            'password' => md5($this->put('password')),
             'view_password' => $this->put('password')
         );
 
