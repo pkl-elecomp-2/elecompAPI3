@@ -46,16 +46,21 @@ class Client extends RestController {
         $id = $this->put('id');
         $data = array(
             'id' => $this->put('id'),
-            'title' => $this->put('title'),
-            'release_date' => $this->put('release_date'),
-            'poster' => $this->put('poster'),
+            'nama_member' => $this->put('nama_member'),
+            'email' => $this->put('email'),
+            'username' => $this->put('username'),
+            'password' => $this->put('password'),
+            'view_password' => $this->put('password')
         );
 
         $this->db->where('id', $id);
         $update = $this->db->update('tb_member', $data);
 
         if ($update) {
-            $this->response($data, 200);
+            $this->response(array(
+                'status' => 'success',
+                'updated_data' => $data
+            ), 200);
         } else {
             $this->response(array('status' => 'fail', 502));
         }
@@ -63,9 +68,26 @@ class Client extends RestController {
 
     // Ticket
     function ticket_get(){
-        $data = array(
-            'data' => $this->db->get('td_tiket')->result()
-        );
+        $code = $this->get('code');
+
+        // When Id given, return ticket with replies
+        if (!empty($code)) {
+            $ticket = $this->db->get_where('tm_tiket', array('kode_tiket' => $code))->result();
+
+            $query = $this->db->query(
+                "SELECT * FROM td_tiket WHERE kode_tiket = $code ORDER BY id"
+            );
+
+            $data = array(
+                'ticket' => $ticket,
+                'replies' => $query->result()
+            );
+        } else {
+            // When Id not given, return all tickets without replies
+            $data = array(
+                'tickets' => $this->db->get('tm_tiket')->result()
+            );
+        }
 
         $this->response($data, 200);
     }
